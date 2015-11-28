@@ -152,3 +152,4 @@ Template.profile.helpers({
       return result;
     }
 });
+//kg
