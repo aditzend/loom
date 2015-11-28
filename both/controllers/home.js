@@ -1,5 +1,9 @@
 HomeController = AppController.extend({
-  data: {
+  layoutTemplate: 'appLayout'
+});
 
-  }
+HomeController.events({
+//  'click [data-action=test1]': function () {
+//    console.log('presionaste ACTION');
+//  }
 });

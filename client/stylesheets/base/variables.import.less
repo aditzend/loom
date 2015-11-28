@@ -2,4 +2,59 @@
 @import "./lib/bootstrap/variables.import.less";
 
 // Custom Variables
-@brand-primary: #DC681D;
+@brand-primary: #D50000;
+@man-dark: #8BA7B0;
+@woman-dark:#AB7EB0;
+
+@bg-selected: #e9e9e9;
+
+//Alert Variables
+// 100 is maximum attention , 900 is minimum attention
+
+@alert100: #DB676D; // reds
+@alert200: #DB9671; // oranges
+@alert300: #CCC875; // yellows
+@alert400: #77C7C9; // marine
+@alert500: #8A74BF; // purple
+@alert600: #5A4FB2; // puse cualquier verdura
+@alert700: #9E9E9C; // light grey
+@alert700: #9EA3BF; // lila
+@alert800: #9EA3BF; // light lila
+@alert900: #9EA3BF; // cream
+
+.label-100 {
+  .label-variant(@alert100);
+}
+
+
+.label-200 {
+  .label-variant(@alert200);
+}
+
+.label-300 {
+  .label-variant(@alert300);
+}
+
+.label-400 {
+  .label-variant(@alert400);
+}
+
+.label-500 {
+  .label-variant(@alert500);
+}
+
+.label-600 {
+  .label-variant(@alert600);
+}
+
+.label-700 {
+  .label-variant(@alert700);
+}
+
+.label-800 {
+  .label-variant(@alert800);
+}
+
+.label-900 {
+  .label-variant(@alert900);
+}

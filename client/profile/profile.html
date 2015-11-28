@@ -1,0 +1,87 @@
+<template name="profile">
+
+
+
+<!-- ************************************* BEGIN  GENDER BLOCK -->
+<div class="page-header">
+  {{#if isMan gender}}
+    <h1 class="appear-first result-man"> {{name}} {{lastName}} </h1>
+  {{else}}
+    <h1 class="appear-first result-woman"> {{name}} {{lastName}} </h1>
+  {{/if}}
+</div>
+<!-- ******************************   END GENDER BLOCK -->
+
+<!-- ************************************* BEGIN  BIRTHDAY BLOCK -->
+<div>
+  {{#if isToday bdate}}<!-- >>>>>> isToday -->
+    <h6 class="label label-100">Hoy cumple {{age bdate}}!</h6>
+    {{else}} <!-- bDay is not today -->
+      {{calcNearest bdate}}
+      {{#if hasPassed}}<!-- >>>>>>   hasPassed -->
+        {{#if moreThanAWeekAgo}}<!-- >>>>>>   moreThanAWeekAgo -->
+            <h5 class="label label-800"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+          {{else}}  <!-- bDay was less than a week ago -->
+            {{#if wasYesterday}}<!-- >>>>>>   wasYesterday -->
+                <h5 class="label label-200"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+              {{else}}
+                <h6 class="label label-500">Cumplio {{age bdate}} {{bDayClose}}</h6>
+            {{/if}}<!--     wasYesterday <<<<<< -->
+        {{/if}}<!--     moreThanAWeekAgo <<<<<< -->
+        {{else}} <!-- bDay has not passed yet -->
+          {{#if isTomorrow}}<!-- >>>>>>   isTomorrow  -->
+            <h5 class="label label-200">Cumple {{newAge bdate}} ma&ntilde;ana !</h5>
+            {{else}} <!-- bDay is not tomorrow -->
+              {{#if inLessThanAWeek}}<!-- >>>>>>   inLessThanAWeek -->
+                  <h5 class="label label-300"> Cumple {{newAge bdate}} a&ntilde;os  {{bDayClose}}</h5>
+                {{else}}<!-- bDay is in more than a week -->
+                  {{#if inLessThanAMonth}}<!-- >>>>>>   inLessThanAMonth -->
+                    <h5 class="label label-400"> Cumple {{newAge bdate}}  {{bDayLong}}</h5>
+                   {{else}}<!-- bDay is in more than a month -->
+                   <h5 class="label label-800"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+                  {{/if}}<!--     inLessThanAMonth <<<<<< -->
+              {{/if}}<!--     inLessThanAWeek <<<<<< -->
+            {{/if}}<!--     isTomorrow <<<<<< -->
+        {{/if}}<!--    hasPassed <<<<<< -->
+    {{/if}}<!--    isToday <<<<<< -->
+</div>
+<!-- ************************************* END  BIRTHDAY BLOCK -->
+<div>
+
+    <h6> <i class="fa fa-ok"></i> Cliente {{customerSince createdAt}} </h6>
+
+
+
+  <div >
+<i class="fa fa-phone"></i>
+    <textarea class="profile-data" id="mobile" data-action="editable">  {{mobile}}</textarea>
+    {{#if isInEditMode "mobile" }}
+    <p>
+       <span class="badge appear-first" data-action="update" >cambiar celular</span>
+    </p>
+    {{/if}}
+    <textarea class="profile-data" id="email" data-action="editable">  {{email}}</textarea>
+    {{#if isInEditMode "email" }}
+    <p>
+       <span class="badge appear-first" data-action="update" >cambiar email</span>
+    </p>
+    {{/if}}
+    <textarea class="profile-data" id="bdate" data-action="editable">  {{bdate}}</textarea>
+    {{#if isInEditMode "bdate" }}
+    <p>
+       <span class="badge appear-first" data-action="update" >cambiar nacimiento</span>
+    </p>
+    {{/if}}
+
+
+  </div>
+
+
+<br />
+
+  <h6> <i class="fa fa-envelope"></i> {{email}}</h6>
+  <h6> <i class="fa fa-gift"></i> {{bdate}}</h6>
+</div>
+
+
+</template>

@@ -1,0 +1,125 @@
+<template name="search">
+  <div class="template-home">
+    <div class="page-header appear-first">
+      <h1 >buscar <strong>cliente</strong> </h1>
+    </div>
+    {{> actodeSearcher}}
+  </div>
+</template>
+
+<template name="actodeSearcher">
+
+
+
+  <div class="input-group input-group-lg appear-second" >
+    {{#EasySearch.IfInputEmpty index=index }}
+
+    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search"></i></span>
+    {{else}}
+      {{#if resultsCount}}
+        {{#if oneFound}}
+        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-thumbs-up"></i></span>
+        {{else}}
+        <span class="input-group-addon" id="sizing-addon1">{{resultsCount}} <i class="fa fa-user"></i></span>
+        {{/if}}
+      {{/if}}
+    {{/EasySearch.IfInputEmpty}}
+    {{#EasySearch.IfSearching index=index }}
+      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-cog spinning"></i></span>
+    {{/EasySearch.IfSearching }}
+    {{#EasySearch.IfNoResults index=index}}
+      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-remove"></i></span>
+    {{/EasySearch.IfNoResults}}
+  {{> EasySearch.Input index=index attributes=inputAttributes }}
+  </div>
+  <ul class="list-group appear-third">
+    {{#EasySearch.Each index=index }}
+      {{#if oneFound}}
+        {{> actode}}
+      {{else}}
+        {{> actodeListItem}}
+      {{/if}}
+    {{/EasySearch.Each}}
+  </ul>
+  {{#EasySearch.IfNoResults index=index }}
+    <div class="padded no-results">Sin resultados</div>
+  {{/EasySearch.IfNoResults }}
+</template>
+
+<template name="actode">
+  <!-- ************************************* BEGIN  GENDER BLOCK -->
+  <div class="page-header">
+    {{#if isMan gender}}
+      <h1 class="appear-first result-man"> {{name}} {{lastName}} </h1>
+    {{else}}
+      <h1 class="appear-first result-woman"> {{name}} {{lastName}} </h1>
+    {{/if}}
+  </div>
+  <!-- ******************************   END GENDER BLOCK -->
+  <!-- ************************************* BEGIN  BIRTHDAY BLOCK -->
+  <div>
+    {{#if isToday bdate}}<!-- >>>>>> isToday -->
+      <h6 class="label label-100">Hoy cumple {{age bdate}}!</h6>
+      {{else}} <!-- bDay is not today -->
+        {{calcNearest bdate}}
+        {{#if hasPassed}}<!-- >>>>>>   hasPassed -->
+          {{#if moreThanAWeekAgo}}<!-- >>>>>>   moreThanAWeekAgo -->
+              <h5 class="label label-800"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+            {{else}}  <!-- bDay was less than a week ago -->
+              {{#if wasYesterday}}<!-- >>>>>>   wasYesterday -->
+                  <h5 class="label label-200"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+                {{else}}
+                  <h6 class="label label-500">Cumplio {{age bdate}} {{bDayClose}}</h6>
+              {{/if}}<!--     wasYesterday <<<<<< -->
+          {{/if}}<!--     moreThanAWeekAgo <<<<<< -->
+          {{else}} <!-- bDay has not passed yet -->
+            {{#if isTomorrow}}<!-- >>>>>>   isTomorrow  -->
+              <h5 class="label label-200">Cumple {{newAge bdate}} ma&ntilde;ana !</h5>
+              {{else}} <!-- bDay is not tomorrow -->
+                {{#if inLessThanAWeek}}<!-- >>>>>>   inLessThanAWeek -->
+                    <h5 class="label label-300"> Cumple {{newAge bdate}} a&ntilde;os  {{bDayClose}}</h5>
+                  {{else}}<!-- bDay is in more than a week -->
+                    {{#if inLessThanAMonth}}<!-- >>>>>>   inLessThanAMonth -->
+                      <h5 class="label label-400"> Cumple {{newAge bdate}}  {{bDayLong}}</h5>
+                     {{else}}<!-- bDay is in more than a month -->
+                     <h5 class="label label-800"> Tiene {{age bdate}}. Cumple: {{bDayPlain}}</h5>
+                    {{/if}}<!--     inLessThanAMonth <<<<<< -->
+                {{/if}}<!--     inLessThanAWeek <<<<<< -->
+              {{/if}}<!--     isTomorrow <<<<<< -->
+          {{/if}}<!--    hasPassed <<<<<< -->
+      {{/if}}<!--    isToday <<<<<< -->
+  </div>
+  <!-- ************************************* END  BIRTHDAY BLOCK -->
+  <div>
+
+      <h6> <i class="fa fa-ok"></i> Cliente {{customerSince createdAt}} </h6>
+
+  </div>
+</template>
+
+<template name="actodeListItem">
+<a href="/profiles/{{_id}}">
+  <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
+
+  {{#if isMan gender}}
+
+      <span class="appear-first result-man">{{name}}</span>
+      <span class="appear-second result-man">{{lastName}}</span>
+
+
+  {{else}}
+
+      <span class="appear-first result-woman">{{name}}</span>
+      <span class="appear-second result-woman">{{lastName}}</span>
+
+  {{/if}}
+  {{#if isSelected}}
+  <div class="btn-group-sm modify-record" role="group" aria-label="...">
+    <button type="button" class="btn btn-default appear-first" data-action="edit"><i class="fa fa-pencil "></i></button>
+    <button type="button" class="btn btn-default appear-second" data-action="delete"><i class="fa fa-trash "></i></button>
+  </div>
+  {{/if}}
+
+</li>
+</a>
+</template>

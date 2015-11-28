@@ -3,7 +3,7 @@ DashboardController = AppController.extend({
     return this.subscribe('items');
   },
   data: {
-    items: Items.find({})
+    items: Actodes.find({})
   },
   onAfterAction: function () {
     Meta.setTitle('Dashboard');
@@ -13,5 +13,6 @@ DashboardController = AppController.extend({
 DashboardController.events({
   'click [data-action=doSomething]': function (event, template) {
     event.preventDefault();
+
   }
 });
