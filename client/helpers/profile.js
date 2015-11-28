@@ -1,9 +1,5 @@
 Template.profile.helpers({
-  isMan: function(g) {
-      if (g === 'M') {
-        return true;
-      }
-    },
+
     customerSince: function(c) {
       var created = moment(c);
       return created.fromNow();
@@ -153,3 +149,20 @@ Template.profile.helpers({
     }
 });
 //kg
+
+// mover despues
+
+Template.profile.rendered = function() {
+  var uploader = new Slingshot.Upload("myFileUploads");
+
+uploader.send(document.getElementById('foto').files[0], function (error, downloadUrl) {
+  if (error) {
+    // Log service detailed response
+    console.error('Error uploading', uploader.xhr.response);
+    alert (error);
+  }
+  else {
+    Meteor.users.update(Meteor.userId(), {$push: {"profile.files": downloadUrl}});
+  }
+});
+}

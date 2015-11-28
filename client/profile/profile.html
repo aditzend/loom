@@ -54,25 +54,27 @@
 
   <div >
 <i class="fa fa-phone"></i>
-    <textarea class="profile-data" id="mobile" data-action="editable">  {{mobile}}</textarea>
+    <input class="profile-data" id="mobile" data-action="editable" value="{{mobile}}" />
     {{#if isInEditMode "mobile" }}
     <p>
        <span class="badge appear-first" data-action="update" >cambiar celular</span>
     </p>
     {{/if}}
-    <textarea class="profile-data" id="email" data-action="editable">  {{email}}</textarea>
+    <textarea class="profile-data" id="email" data-action="editable">{{email}}</textarea>
     {{#if isInEditMode "email" }}
     <p>
        <span class="badge appear-first" data-action="update" >cambiar email</span>
     </p>
     {{/if}}
-    <textarea class="profile-data" id="bdate" data-action="editable">  {{bdate}}</textarea>
+    <textarea class="profile-data" id="bdate" data-action="editable">{{bdate}}</textarea>
     {{#if isInEditMode "bdate" }}
     <p>
        <span class="badge appear-first" data-action="update" >cambiar nacimiento</span>
     </p>
     {{/if}}
 
+    <input type='file' id='foto'/>
+    <button type="button" id="sling">sling</button>
 
   </div>
 

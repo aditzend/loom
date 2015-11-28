@@ -45,3 +45,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 ecmascript
 ccorcos:animate
 meteortoys:allthings
+edgee:slingshot

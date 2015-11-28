@@ -39,6 +39,7 @@ easysearch:core@2.0.3
 easysearch:elasticsearch@2.0.3
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
+edgee:slingshot@0.7.1
 ejson@1.0.7
 email@1.0.8
 erasaur:meteor-lodash@3.10.1_1
