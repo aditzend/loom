@@ -36,6 +36,9 @@ AppController.events({
       author: author,
       createdAt: moment().toDate()
     });
+
+    console.log('ingreso ok');
+    Router.go('/');
   },
   'click [data-action=update]': function() {
 
