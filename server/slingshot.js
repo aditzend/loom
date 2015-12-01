@@ -1,5 +1,6 @@
+/*
 Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
-  bucket: "mybucket",
+  bucket: "mybucket",//ponerle el nombre que cree en AWS cuando me deje entrar
 
   acl: "public-read",
 
@@ -19,3 +20,4 @@ Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
     return user.username + "/" + file.name;
   }
 });
+*/

@@ -1,9 +1,7 @@
 //styler
-Router.route('/', {
-  name: 'home'
-});
 
-Router.route('/search', {
+
+Router.route('/', {
   name: 'search',
   controller: 'SearchController'
 });
