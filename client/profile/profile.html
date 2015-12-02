@@ -1,7 +1,11 @@
 <template name="profile">
 {{> genderHeader}}
   <button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i></button>
+  <br />
+
 {{> birthday}}
+
+<!-- REVISAR DATA ACTION EDITABLE, NO FUNCA CON LOS INPUT
 <div>
     <h6> <i class="fa fa-ok"></i> Cliente {{customerSince createdAt}} </h6>
   <div >
@@ -24,15 +28,45 @@
        <span class="badge appear-first" data-action="update" >cambiar nacimiento</span>
     </p>
     {{/if}}
+-->
+
+
+<br />
+
+    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1" >@</span>
+  <input type="text" data-action="editable" class="form-control" value= "{{email}}" placeholder="Username" aria-describedby="basic-addon1">
+  {{#if isInEditMode "email" }}
+  <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+  {{/if}}
+</div>
+
+<br />
+
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon1" ><i class="fa fa-phone"></i></span>
+<input type="text" data-action="editable" class="form-control" value= "{{mobile}}" placeholder="Username" aria-describedby="basic-addon1">
+{{#if isInEditMode "mobile" }}
+<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+{{/if}}
+</div>
+
+<br />
+
+<div class="input-group">
+<span class="input-group-addon" id="basic-addon1" ><i class="fa fa-gift"></i></span>
+<input type="text" data-action="editable" class="form-control" value= "{{bdate}}" placeholder="Username" aria-describedby="basic-addon1">
+{{#if isInEditMode "bdate" }}
+<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+{{/if}}
+</div>
+
+<br />
+
 <!--
     <input type='file' id='foto'/>
     <button type="button" id="sling">sling</button>
 -->
-</div>
 
-  <h6> <i class="fa fa-envelope"></i> {{email}}</h6>
-  <h6> <i class="fa fa-gift"></i> {{bdate}}</h6>
-
-</div>
 
 </template>
