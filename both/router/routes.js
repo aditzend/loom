@@ -1,7 +1,9 @@
 //styler
-
-
 Router.route('/', {
+  name: 'home'
+});
+
+Router.route('/search', {
   name: 'search',
   controller: 'SearchController'
 });
@@ -19,6 +21,9 @@ Router.route('/new-actode', {
   name: 'newActode',
   controller: 'NewActodeController'
 });
+Router.route('/deleteConfirmed', {
+  name: 'deleteConfirmed'
+});
 
 Router.route('/actodes/:someParameter', {
     data: function(){
@@ -30,5 +35,13 @@ Router.route('/profiles/:_id', {
     name: 'profile',
     data: function(){
         return Actodes.findOne({_id: this.params._id});
+    }
+});
+
+Router.route('/delete/:_id', {
+  name: 'delete',
+  layoutTemplate: 'redAlertLayout',
+  data: function(){
+      return Actodes.findOne({_id: this.params._id});
     }
 });

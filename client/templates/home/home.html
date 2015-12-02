@@ -1,47 +1,25 @@
 <template name="home">
   <div class="template-home">
+
+
+    {{#if currentUser}}
+      {{> search}}
+    {{else}}
     <div class="page-header">
       <h1>bienvenido a <strong>styler</strong></h1>
       <h5>Guard&aacute; y administr&aacute; toda la informaci&oacute;n importante de tus clientes</h5>
     </div>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1">DNI</span>
-      <input id="lco" type="text" class="form-control" placeholder="Sin puntos ni espacios" aria-describedby="sizing-addon1">
-</div>
-
-<div>
-  <input class="test3" type="text" placeholder="test3 onchange event">
-  <button type="button" class="test4">TEst4</button>
-</div>
+      <div >
+        <a href="{{ pathFor 'atSignIn' }}" class="btn btn-default">Entra</a>
+        <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary">Registrate</a>
+      </div>
+    {{/if}}
 
 
-<div class="ad-form">
 
-        <div class="ad-title">
-    <h3>Create an Account</h3>
-  </div>
-        <div class="ad-pwd-form">
-    <form role="form" id="ad-pwd-form" novalidade="" action="#" method="POST">
-      <fieldset>
-
-
-    <div class="ad-input form-group">
-    <label class="control-label" for="ad-field-test2">
-      test2
-    </label>
-    <input type="text" class="form-control" id="ad-field-test2" name="ad-field-test2" placeholder="test2" autocapitalize="none" autocorrect="off">
-    <span class="help-block hide"></span>
-  </div>
-        <button type="submit" class="at-btn submit btn btn-lg btn-block btn-default" id="at-btn">
-    Register
-  </button>
-      </fieldset>
-    </form>
-  </div>
 
 
   </div>
-    </div>
 
 
 

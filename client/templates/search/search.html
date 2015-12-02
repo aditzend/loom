@@ -8,9 +8,6 @@
 </template>
 
 <template name="actodeSearcher">
-
-
-
   <div class="input-group input-group-lg appear-second" >
     {{#EasySearch.IfInputEmpty index=index }}
 
@@ -98,28 +95,30 @@
 </template>
 
 <template name="actodeListItem">
-<a href="/profiles/{{_id}}">
-  <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
+
 
   {{#if isMan gender}}
-
+  <a href="/profiles/{{_id}}">
+    <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
       <span class="appear-first result-man">{{name}}</span>
       <span class="appear-second result-man">{{lastName}}</span>
-
+    </li>
+    </a>
 
   {{else}}
-
+  <a href="/profiles/{{_id}}">
+    <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
       <span class="appear-first result-woman">{{name}}</span>
       <span class="appear-second result-woman">{{lastName}}</span>
-
+    </li>
+    </a>
   {{/if}}
   {{#if isSelected}}
   <div class="btn-group-sm modify-record" role="group" aria-label="...">
-    <button type="button" class="btn btn-default appear-first" data-action="edit"><i class="fa fa-pencil "></i></button>
-    <button type="button" class="btn btn-default appear-second" data-action="delete"><i class="fa fa-trash "></i></button>
+    <button type="button" class="btn btn-default appear-first" data-action="editSelectedActode"><i class="fa fa-pencil "></i></button>
+    <button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i></button>
   </div>
   {{/if}}
 
-</li>
-</a>
+
 </template>

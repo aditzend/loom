@@ -7,6 +7,27 @@ AppController.events({
     AccountsTemplates.logout();
     //console.log("logout");
   },
+  'click [data-action=deleteSelectedActode]' : function() {
+    console.log('delete ' + Session.get("selectedActode"));
+    //var c = confirm('Vas a eliminar todos los datos de este cliente, estas seguro?');
+    //if (c === true) {
+      //Actodes.remove({_id : Session.get("selectedActode")});
+      Router.go('/delete/' + Session.get("selectedActode"));
+    //}
+
+  },
+  'click [data-action=confirmDeleteSelectedActode]' : function() {
+    console.log('delete ' + Session.get("selectedActode"));
+    //var c = confirm('Vas a eliminar todos los datos de este cliente, estas seguro?');
+    //if (c === true) {
+      Actodes.remove({_id : Session.get("selectedActode")});
+      Router.go('deleteConfirmed');
+    //}
+
+  },
+  'click [data-action=goToProfilePage]' : function() {
+    Router.go('/profiles/' + Session.get("selectedActode"));
+  },
   'submit [data-action=newActodeSubmission]' : function(e) {
     e.preventDefault();
     var country = '0540'; // codigo en protocolo CONEC de Argentina

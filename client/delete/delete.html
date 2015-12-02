@@ -1,6 +1,10 @@
-<template name="profile">
+<template name="delete">
+
+  <h4> realmente queres eliminar a este cliente?</h4>
+  <button type="button" class="btn btn-default appear-second" data-action="confirmDeleteSelectedActode">ELIMINAR</button>
+  <button type="button" class="btn btn-default appear-third" data-action="goToProfilePage">MANTENER</button>
 {{> genderHeader}}
-  <button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i></button>
+
 {{> birthday}}
 <div>
     <h6> <i class="fa fa-ok"></i> Cliente {{customerSince createdAt}} </h6>

@@ -68,8 +68,10 @@
 }
 
 @keyframes disappear {
-  0% { opacity: 1;  top:0px;}
-  100% {opacity: 0; top:-200px;}
+  0% { opacity: 0;  }
+  15% { opacity: 1;}
+  85% { opacity: 0.9;}
+  100% {opacity: 0; }
 }
 
 @keyframes flash {
@@ -103,10 +105,11 @@
 
 .disappear-up {
   animation-name: disappear;
-  animation-duration: 200ms;
+  animation-duration: 1200ms;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
+  //animation-fill-mode: both;
+
 }
 
 .appear-first {
