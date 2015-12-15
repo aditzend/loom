@@ -21,7 +21,6 @@ ccorcos:animate@0.0.2
 check@1.1.0
 cmather:handlebars-server@0.2.0
 coffeescript@1.0.11
-cunneen:mailgun@0.9.1
 dburles:collection-helpers@1.0.4
 dburles:factory@0.3.10
 dburles:mongo-collection-instances@0.3.4
@@ -135,5 +134,6 @@ useraccounts:iron-routing@1.12.4
 velocityjs:velocityjs@1.2.1
 webapp@1.2.3
 webapp-hashing@1.0.5
+wylio:mandrill@1.0.1
 yasinuslu:blaze-meta@0.3.3
 zimme:iron-router-active@1.0.4

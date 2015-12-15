@@ -18,7 +18,8 @@ underscorestring:underscore.string
 matb33:collection-hooks
 dburles:factory
 anti:fake
-cunneen:mailgun
+#cunneen:mailgun
+wylio:mandrill
 iron:router@1.0.0
 yasinuslu:blaze-meta
 aldeed:collection2

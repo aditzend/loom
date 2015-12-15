@@ -1,6 +1,60 @@
 @import '../base/mixins.import.less';
 @import '../base/variables.import.less';
 
+
+a {
+  font-weight:bold;
+
+  text-decoration:none;
+}
+.man{
+  background-color: @man-bg;
+  color:white;
+}
+.woman{
+  background-color: @woman-bg;
+  color:white;
+}
+
+
+a:hover,a:active,a:focus{
+  text-decoration:underline;
+}
+a:active,a:focus{
+  position:relative;
+  top:1px;
+}
+
+#clickable-line a{
+  display:block;
+  padding:20px;
+  font-weight:normal;
+  color:inherit;
+}
+#clickable-line a:hover{
+  text-decoration: none;
+}
+
+#clickable-line strong{
+  float:right;
+}
+
+#clickable-line{
+  margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .profile-data {
   color: @alert300;
   border: none;

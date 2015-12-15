@@ -17,6 +17,7 @@ Router.plugin('ensureSignedIn', {
   only: ['dashboard', 'newActode', 'search','editActode']
 });
 
+
 Router.route('/new-actode', {
   name: 'newActode',
   controller: 'NewActodeController'
