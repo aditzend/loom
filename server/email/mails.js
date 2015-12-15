@@ -112,36 +112,36 @@ Accounts.emailTemplates.resetPassword.text = function (user, url) {
 //Accounts.emailTemplates.siteName = "MySite";
 //Accounts.emailTemplates.from = "MySite <support@mysite.com>";
 Accounts.emailTemplates.resetPassword.subject = function () {
-    return "MessageXXXX for " ;
+    return "Mensaje de Styler " ;
 };
 Accounts.emailTemplates.resetPassword.text = function (user, url) {
-    var signature = "MySiteXXX Bot";
+    var signature = "Styler";
     //var president = President.findOne();
     //if (president)
     //    president = Meteor.users.findOne(president.presidentId);
     //    signature = president.profile.displayName + ", the MySite President.";
-    return "Dear XX ,\n\n" +
-        "Click the XXXfollowing link to set your new password:\n" +
+    return "Estimado,\n\n" +
+        "Haga click aqui para crear una clave nueva:\n" +
         url + "\n\n" +
-        "Please never XXXforget it again!!!\n\n\n" +
-        "CheersXXX,\n" +
+        "No se la olvide!!!\n\n\n" +
+        "Saludos,\n" +
         signature;
 };
 
 Accounts.emailTemplates.enrollAccount.subject = function () {
-    return "MessageXXXX for " ;
+    return "Mensaje de Styler" ;
 };
 Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-    var signature = "MySiteXXX Bot";
+    var signature = "Styler";
     //var president = President.findOne();
     //if (president)
     //    president = Meteor.users.findOne(president.presidentId);
     //    signature = president.profile.displayName + ", the MySite President.";
-    return "Dear XX ,\n\n" +
-        "Click the XXXfollowing link to set your new password:\n" +
+    return "Estimado,\n\n" +
+        "Haga click aqui para confirmar su cuenta:\n" +
         url + "\n\n" +
-        "Please never XXXforget it again!!!\n\n\n" +
-        "CheersXXX,\n" +
+
+        "Saludos,\n" +
         signature;
 };
 
