@@ -1,34 +1,7 @@
-<template name='genderHeaderClickable'>
-
-    {{#if isMan gender}}
-    <p id='clickable-line' class='man'>
-    <a href='profiles/{{_id}}' class='area-man'>
-       {{name}} {{lastName}}
-       <strong> ir al perfil </strong>
-    </a>
-  </p>
-
-    {{else}}
-     <p id='clickable-line' class='woman'>
-      <a href='profiles/{{_id}}' class='area-woman'>
-         {{name}} {{lastName}}
-         <strong> ir al perfil </strong>
-      </a>
-    </p>
-    {{/if}}
-
-</template>
 <template name='genderHeader'>
-
     {{#if isMan gender}}
-    <p id='clickable-line' class='man'>
-    <a href='' class='area-man'>
-       {{name}} {{lastName}}
-    </a>
-  </p>
-
+    <h1 class='appear-first result-man'>{{name}} {{lastName}}</h1>
     {{else}}
-      <h1 class="appear-first result-woman"> {{name}} {{lastName}} </h1>
+      <h1 class="appear-first result-woman">{{name}} {{lastName}}</h1>
     {{/if}}
-
 </template>

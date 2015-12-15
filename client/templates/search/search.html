@@ -48,7 +48,7 @@
 
 <div class='appear-first'>
   {{> genderHeaderClickable}}
-  <a href="/profiles/{{_id}}"><button type='button' class="btn btn-default"><i class="fa fa-pencil"></i></button></a>
+  <!--<a href="/profiles/{{_id}}"><button type='button' class="btn btn-default"><i class="fa fa-pencil"></i></button></a>-->
 </div>
 <br />
 <div class='appear-second'>
@@ -61,19 +61,19 @@
 </template>
 
 <template name="actodeListItem">
-  {{#if isMan gender}}
+  
     <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
-      <span class="appear-first result-man">{{name}}</span>
+      {{> genderHeaderClickable}}
+      <!--<span class="appear-first result-man">{{name}}</span>
       <span class="appear-second result-man">{{lastName}}</span>
-      <a href="/profiles/{{_id}}"><button type='button'><i class="fa fa-user"></i></button></a>
+      <a href="/profiles/{{_id}}"><button type='button'><i class="fa fa-user"></i></button></a>-->
     </li>
-  {{else}}
-    <li data-action="actode-item" class="list-group-item {{selected}}" value="{{_id}}">
-      <span class="appear-first result-woman">{{name}}</span>
+
+
+      <!--<span class="appear-first result-woman">{{name}}</span>
       <span class="appear-second result-woman">{{lastName}}</span>
-      <a href="/profiles/{{_id}}"><button type='button'><i class="fa fa-user"></i></button></a>
-    </li>
-  {{/if}}
+      <a href="/profiles/{{_id}}"><button type='button'><i class="fa fa-user"></i></button></a>-->
+
   {{#if isSelected}}
   <div class="btn-group-sm modify-record" role="group" aria-label="...">
     <button type="button" class="btn btn-default appear-first" data-action="editSelectedActode"><i class="fa fa-pencil "></i></button>

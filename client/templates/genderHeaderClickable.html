@@ -1,0 +1,20 @@
+<template name='genderHeaderClickable'>
+
+    {{#if isMan gender}}
+    <p id='clickable-line' class='man'>
+    <a href='profiles/{{_id}}' class='area-man'>
+       {{name}} {{lastName}}
+       <strong> > </strong>
+    </a>
+  </p>
+
+    {{else}}
+     <p id='clickable-line' class='woman'>
+      <a href='profiles/{{_id}}' class='area-woman'>
+         {{name}} {{lastName}}
+         <strong> > </strong>
+      </a>
+    </p>
+    {{/if}}
+
+</template>

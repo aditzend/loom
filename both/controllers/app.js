@@ -79,6 +79,8 @@ AppController.events({
   'click [data-action=editable]': function(e) {
 
     Session.set("editing",e.target.id);
+    console.log(e.target.id);
+
 
   }
 

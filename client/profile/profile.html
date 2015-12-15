@@ -1,6 +1,6 @@
 <template name="profile">
 {{> genderHeader}}
-  <button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i></button>
+
   <br />
 
 {{> birthday}}
@@ -33,11 +33,11 @@
 
 <br />
 
-    <div class="input-group">
+<div class="input-group">
   <span class="input-group-addon" id="basic-addon1" >@</span>
-  <input type="text" data-action="editable" class="form-control" value= "{{email}}" placeholder="Username" aria-describedby="basic-addon1">
+  <input id="email" type="email" data-action="editable" class="form-control" value= "{{email}}" placeholder="email" aria-describedby="email">
   {{#if isInEditMode "email" }}
-  <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+  <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
   {{/if}}
 </div>
 
@@ -45,9 +45,9 @@
 
 <div class="input-group">
 <span class="input-group-addon" id="basic-addon1" ><i class="fa fa-phone"></i></span>
-<input type="text" data-action="editable" class="form-control" value= "{{mobile}}" placeholder="Username" aria-describedby="basic-addon1">
+<input id="mobile" type="text" data-action="editable" class="form-control" value= "{{mobile}}" placeholder="Username" aria-describedby="basic-addon1">
 {{#if isInEditMode "mobile" }}
-<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
 {{/if}}
 </div>
 
@@ -55,13 +55,15 @@
 
 <div class="input-group">
 <span class="input-group-addon" id="basic-addon1" ><i class="fa fa-gift"></i></span>
-<input type="text" data-action="editable" class="form-control" value= "{{bdate}}" placeholder="Username" aria-describedby="basic-addon1">
+<input id="bdate" type="date" data-action="editable" class="form-control" value= "{{bdate}}" placeholder="Username" aria-describedby="basic-addon1">
 {{#if isInEditMode "bdate" }}
-<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > cambiar </span>
+<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
 {{/if}}
 </div>
 
 <br />
+
+<button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i> borrar cliente </button>
 
 <!--
     <input type='file' id='foto'/>
