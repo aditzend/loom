@@ -1,69 +1,62 @@
 <template name="profile">
 {{> genderHeader}}
-
-  <br />
-
-{{> birthday}}
-
-<!-- REVISAR DATA ACTION EDITABLE, NO FUNCA CON LOS INPUT
-<div>
-    <h6> <i class="fa fa-ok"></i> Cliente {{customerSince createdAt}} </h6>
-  <div >
-<i class="fa fa-phone"></i>
-    <input class="profile-data" id="mobile" data-action="editable" value="{{mobile}}" />
-    {{#if isInEditMode "mobile" }}
-    <p>
-       <span class="badge appear-first" data-action="update" >cambiar celular</span>
-    </p>
-    {{/if}}
-    <textarea class="profile-data" id="email" data-action="editable">{{email}}</textarea>
-    {{#if isInEditMode "email" }}
-    <p>
-       <span class="badge appear-first" data-action="update" >cambiar email</span>
-    </p>
-    {{/if}}
-    <textarea class="profile-data" id="bdate" data-action="editable">{{bdate}}</textarea>
-    {{#if isInEditMode "bdate" }}
-    <p>
-       <span class="badge appear-first" data-action="update" >cambiar nacimiento</span>
-    </p>
-    {{/if}}
--->
-
-
 <br />
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1" >@</span>
-  <input id="email" type="email" data-action="editable" class="form-control" value= "{{email}}" placeholder="email" aria-describedby="email">
+{{> birthday}}
+<hr />
+{{#if isDataState 'update'}}
+<h1>editando datos</h1>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1" >@</span>
+    <input id="email" type="email" data-action="editable" class="form-control" value= "{{email}}" placeholder="email" aria-describedby="email">
   {{#if isInEditMode "email" }}
+    <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
+  {{/if}}
+  </div>
+
+  <hr />
+
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1" ><i class="fa fa-phone"></i></span>
+  <input id="mobile" type="text" data-action="editable" class="form-control" value= "{{mobile}}" placeholder="Username" aria-describedby="basic-addon1">
+  {{#if isInEditMode "mobile" }}
   <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
   {{/if}}
-</div>
+  </div>
 
-<br />
+  <hr />
 
-<div class="input-group">
-<span class="input-group-addon" id="basic-addon1" ><i class="fa fa-phone"></i></span>
-<input id="mobile" type="text" data-action="editable" class="form-control" value= "{{mobile}}" placeholder="Username" aria-describedby="basic-addon1">
-{{#if isInEditMode "mobile" }}
-<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1" ><i class="fa fa-gift"></i></span>
+  <input id="bdate" type="date" data-action="editable" class="form-control" value= "{{bdate}}" placeholder="Username" aria-describedby="basic-addon1">
+  {{#if isInEditMode "bdate" }}
+  <span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
+  {{/if}}
+  </div>
+
+  <hr />
+
+{{else}}
+
+  <h6 class="form-field-name">EMAIL</h6>
+  <a href="mailto:{{email}}" id="profile-email">{{email}}</a>
+
+  <hr />
+
+  <h6 class="form-field-name">TEL&Eacute;FONO CELULAR</h6>
+  <a href="tel:{{mobile}}" id="profile-mobile">{{mobile}}</a>
+
+  <hr />
+
+  <h6 class="form-field-name">FECHA DE NACIMIENTO</h6>
+  <h4>{{formatArg bdate}}</h4>
+
+  <hr />
+  <button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash"></i> borrar perfil </button>
+  <button type="button" class="btn btn-default appear-third" data-action="setDataStateToUpdate"><i class="fa fa-pencil"></i> editar perfil </button>
 {{/if}}
-</div>
 
-<br />
 
-<div class="input-group">
-<span class="input-group-addon" id="basic-addon1" ><i class="fa fa-gift"></i></span>
-<input id="bdate" type="date" data-action="editable" class="form-control" value= "{{bdate}}" placeholder="Username" aria-describedby="basic-addon1">
-{{#if isInEditMode "bdate" }}
-<span class="input-group-addon appear-first" data-action="update" id="basic-addon1" > modificar </span>
-{{/if}}
-</div>
 
-<br />
-
-<button type="button" class="btn btn-default appear-second" data-action="deleteSelectedActode"><i class="fa fa-trash "></i> borrar cliente </button>
 
 <!--
     <input type='file' id='foto'/>

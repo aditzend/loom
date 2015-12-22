@@ -1,0 +1,15 @@
+<template name="actode"> <!-- FAST VIEW, NOT PROFILE, USER HAS TO CLICK ON THE NAME TO GO TO PROFILE PAGE -->
+
+<div class='appear-first'>
+  {{> genderHeaderClickable}}
+  <!--<a href="/profiles/{{_id}}"><button type='button' class="btn btn-default"><i class="fa fa-pencil"></i></button></a>-->
+</div>
+<br />
+<div class='appear-second'>
+  {{> birthday}}
+</div>
+  <br />
+  <div class='appear-third'>
+      <p> <i class="fa fa-check"></i> Cliente {{customerSince createdAt}} </p>
+  </div>
+</template>

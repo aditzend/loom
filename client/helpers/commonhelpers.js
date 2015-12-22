@@ -16,6 +16,9 @@ Template.registerHelper('isInEditMode', function(id) {
   var result = (Session.get('editing') === id) ? true:false;
   return result;
 });
+Template.registerHelper("isDataState", function(state){
+  return (Session.get('dataState') === state) ? true:false;
+});
 
 Template.registerHelper('customerSince', function(c) {
   var created = moment(c);
@@ -24,4 +27,9 @@ Template.registerHelper('customerSince', function(c) {
 
 Template.registerHelper('headerMessage', function() {
   return Session.get('headerMessage');
+});
+
+
+Template.registerHelper("formatArg", function(date){
+  return moment(date).format("DD. MMMM YYYY");
 });

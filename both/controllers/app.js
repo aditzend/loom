@@ -70,14 +70,16 @@ AppController.events({
       Actodes.update(actodeId, {$set: {[field]: element.value}});
       console.log('EXITO! id: ' + Session.get('selectedActode')+ 'checkear contra mongol: ' + element.value);
       Session.set('editing','');
+      Session.set('dataState','saved');
     } else {
       console.log('no se a quien....');
     }
-
-
+  },
+  'click [data-action=setDataStateToUpdate]': function() {
+    Session.set('dataState','update');
+    console.log("message");
   },
   'click [data-action=editable]': function(e) {
-
     Session.set("editing",e.target.id);
     console.log(e.target.id);
 
