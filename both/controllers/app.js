@@ -84,6 +84,19 @@ AppController.events({
     console.log(e.target.id);
 
 
+  },
+  'click [data-action=actodeTest1]': function() {
+
+    //inserto doc en Actodes
+    Actodes.insert({
+      name: 'actode',
+      lastName: 'test',
+      userId: '',
+      createdAt: moment().toDate()
+    });
+    var createdActode = Actodes.findOne({userId:Meteor.userId()}, {fields: {name:1} });
+
+console.log("creating related actode "+ Meteor.userId() + ' actode is: ' + createdActode.name );
   }
 
 });

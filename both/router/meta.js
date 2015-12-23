@@ -2,8 +2,8 @@ if(Meteor.isClient) {
   Meta.config({
       options: {
         // Meteor.settings[Meteor.settings.environment].public.meta.title
-        title: 'styler',
-        suffix: 'styler'
+        title: 'Loom',
+        suffix: 'connected economies'
       }
   });
 }

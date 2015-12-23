@@ -33,3 +33,6 @@ Template.registerHelper('headerMessage', function() {
 Template.registerHelper("formatArg", function(date){
   return moment(date).format("DD. MMMM YYYY");
 });
+Template.registerHelper("myUserId", function(){
+  return Meteor.userId();
+});
