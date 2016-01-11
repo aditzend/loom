@@ -1,3 +1,66 @@
+
+Template.registerHelper("relatedActodeName", function(){
+  ra = Meteor.user().relatedActode;
+  //Session.get('relatedActode')
+  return Actodes.find( {_id: ra })
+    .map (
+      function(actode){
+        return actode.name;
+      }
+    );
+  }
+);
+
+Template.registerHelper("belongsToId", function(){
+    relatedActodeId = Meteor.user().relatedActode;
+
+
+    //esto es el id de la empresa, no de la persona relacionada al usuario
+
+
+    return Actodes.find( {_id: relatedActodeId })
+    .map (
+      function(actode){
+        return actode.belongsTo;
+      }
+    );
+
+
+  }
+);
+
+Template.registerHelper("belongsTo", function(){
+  relatedActodeId = Meteor.user().relatedActode;
+  belongsToId = Actodes.find( {_id: relatedActodeId })
+  .map (
+    function(actode){
+      return actode.belongsTo;
+    }
+  );
+  //console.log(belongsToId[0]);
+
+  //belongsToId = "'"+ belongsToId[0]+"'";
+
+  //foo = JSON.stringify(belongsToId);
+  console.log( typeof(belongsToId) );
+  console.log(belongsToId.toString());
+  console.log(belongsToId.valueOf());
+
+
+  //console.log(foo);
+
+  aux = '34dsomJC8Rp6PYJjG';
+
+  belongsToName =   Actodes.findOne({_id: belongsToId.toString() }, { fields: {name:1} }).name;
+  //console.log(belongsToName);
+
+  return belongsToName;
+
+});
+
+
+
+
 Template.registerHelper('daysCreated', function(m) {
   var days = moment(m).startOf('day').fromNow();
   //var today = m + 3;
@@ -10,6 +73,9 @@ Template.registerHelper('userPrimaryEmail', function(){
   } else {
     return 'no log';
   }
+});
+Template.registerHelper("relatedActode", function(){
+  return user.relatedActode;
 });
 
 Template.registerHelper('isInEditMode', function(id) {
@@ -35,4 +101,18 @@ Template.registerHelper("formatArg", function(date){
 });
 Template.registerHelper("myUserId", function(){
   return Meteor.userId();
+});
+Template.registerHelper("userCan", function(generalAction){
+
+    //var specificAction = Session.get("country")+"-"+Session.get("org")+"--"+generalAction;
+
+    //REMPLAZAR ESTO POR SETEOS ACTIVOS
+
+    var specificAction = generalAction;
+
+    console.log(specificAction + ' permission required');
+    return Roles.userHasRole(Meteor.userId(), specificAction);
+
+
+
 });

@@ -1,16 +1,21 @@
-<template name="search">
+<template name="adminUsers">
+  <h1>Administracion de Usuarios</h1>
+  {{#if userCan "testla"}}
   <div class="template-home">
-{{#if userCan 'view'}}VIEW OK{{else}}VIEW DENIED{{/if}}
     <div class="page-header appear-first">
-      <h1 >buscar <strong>cliente</strong> </h1>
+      <h1 >buscar <strong>usuario</strong> </h1>
     </div>
-    {{> actodeSearcher}}
+    {{> userSearcher}}
   </div>
+{{else}}
+{{> accessDenied}}
+
+{{/if}}
 </template>
 <!-- SEARCHBAR -->
-<template name="actodeSearcher">
+<template name="userSearcher">
   <div class="input-group input-group-lg appear-second" >
-    {{#EasySearch.IfInputEmpty index=index }}
+    {{#EasySearch.IfInputEmpty index=usersIndex }}
 
     <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search"></i></span>
     {{else}}
@@ -22,16 +27,16 @@
         {{/if}}
       {{/if}}
     {{/EasySearch.IfInputEmpty}}
-    {{#EasySearch.IfSearching index=index }}
+    {{#EasySearch.IfSearching index=usersIndex }}
       <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-cog spinning"></i></span>
     {{/EasySearch.IfSearching }}
-    {{#EasySearch.IfNoResults index=index}}
+    {{#EasySearch.IfNoResults index=usersIndex}}
       <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-remove"></i></span>
     {{/EasySearch.IfNoResults}}
-  {{> EasySearch.Input index=index attributes=inputAttributes }}
+  {{> EasySearch.Input index=usersIndex attributes=inputAttributes }}
   </div>
   <ul class="list-group appear-third">
-    {{#EasySearch.Each index=index }}
+    {{#EasySearch.Each index=usersIndex }}
       {{#if oneFound}}
         {{> actode}}
       {{else}}
@@ -39,7 +44,7 @@
       {{/if}}
     {{/EasySearch.Each}}
   </ul>
-  {{#EasySearch.IfNoResults index=index }}
+  {{#EasySearch.IfNoResults index=usersIndex }}
     <div class="padded no-results">Sin resultados</div>
   {{/EasySearch.IfNoResults }}
 </template>

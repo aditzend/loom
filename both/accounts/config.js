@@ -1,3 +1,5 @@
+
+
 AccountsTemplates.configure({
   //Behavior
   confirmPassword: false,
@@ -71,6 +73,30 @@ AccountsTemplates.configure({
         termsTerms: "terms",
     }
   });
+
+  var mySubmitFunc = function(error, state){
+    if (!error) {
+      if (state === "signIn") {
+        //console.log("LOGGED IN");
+        //console.log('relatedActode stored in Session > ' + Meteor.user().relatedActode);
+        //Session.set('relatedActode', Meteor.user().relatedActode);
+
+        // ...
+      }
+      if (state === "signUp") {
+        console.log("USER REGISTERED");
+
+
+        // Successfully registered
+        // ...
+      }
+    }
+  };
+
+  AccountsTemplates.configure({
+      onSubmitHook: mySubmitFunc
+  });
+
 AccountsTemplates.configureRoute('signIn', {layoutTemplate: 'appLayout'});
 AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
 AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});

@@ -1,0 +1,7 @@
+Accounts.onCreateUser(function(options, user) {
+    //pass the surname in the options
+
+    user.profile['surname'] = options.surname
+
+    return user
+}

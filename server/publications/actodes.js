@@ -1,7 +1,7 @@
 Meteor.publish('actodes',
  function() {
    if (this.userId) {
-     return Actodes.find( {author: this.userId});
+     return Actodes.find();
    } else {
      this.ready();
    }
