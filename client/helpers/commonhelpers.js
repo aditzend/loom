@@ -1,4 +1,17 @@
 
+Template.registerHelper("relationships", function(type){
+  type = type.toString();
+  return Relationships.find({type:  type});
+});
+
+Template.registerHelper("actodeName", function(destiny){
+  return Actodes.findOne({idGlobal: destiny}).name;
+});
+
+Template.registerHelper("actodeLastName", function(destiny){
+  return Actodes.findOne({idGlobal: destiny}).lastName;
+});
+
 Template.registerHelper("relatedActodeName", function(){
   ra = Meteor.user().relatedActode;
   //Session.get('relatedActode')
@@ -10,6 +23,11 @@ Template.registerHelper("relatedActodeName", function(){
     );
   }
 );
+
+Template.registerHelper("hasCustomizedDashboard", function(){
+  return Meteor.user().hasCustomizedDashboard;
+
+});
 
 Template.registerHelper("belongsToId", function(){
     relatedActodeId = Meteor.user().relatedActode;
@@ -42,14 +60,14 @@ Template.registerHelper("belongsTo", function(){
   //belongsToId = "'"+ belongsToId[0]+"'";
 
   //foo = JSON.stringify(belongsToId);
-  console.log( typeof(belongsToId) );
-  console.log(belongsToId.toString());
-  console.log(belongsToId.valueOf());
+  //console.log( typeof(belongsToId) );
+  //console.log(belongsToId.toString());
+  //console.log(belongsToId.valueOf());
 
 
   //console.log(foo);
 
-  aux = '34dsomJC8Rp6PYJjG';
+  //aux = '34dsomJC8Rp6PYJjG';
 
   belongsToName =   Actodes.findOne({_id: belongsToId.toString() }, { fields: {name:1} }).name;
   //console.log(belongsToName);

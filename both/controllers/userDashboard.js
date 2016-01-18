@@ -4,24 +4,26 @@
 
 UserDashboardController = AppController.extend({
   layoutTemplate: 'appLayout',
-  data: {
-    user: function()    {
-      var currentUser = Meteor.userId();
-      var userDocument = Meteor.users.findOne( {_id:currentUser} );
-      return userDocument;
-    },
+  //templateStr = "'"+this.params.belongsToId + '-' + this.params.template+"'";
 
-}
+
+  //name:"34dsomJC8Rp6PYJjG-dashboard",
+  template: "34dsomJC8Rp6PYJjG-dashboard",
+  //data: {
+  //  user: function()    {
+  //    var currentUser = Meteor.userId();
+  //    var userDocument = Meteor.users.findOne( {_id:currentUser} );
+  //    return userDocument;
+  //  },
+  // }
+    //waitOn: function() {
+    //  return Meteor.subscribe('actodes');
+      //this.subscribe('relationships', Meteor.user().belongsTo);
+  //  },
+
+
 });
 
 UserDashboardController.events({
 
-'click [data-action=fafa]': function() {
-  console.log("fafa");
-Router.go('/');
-},
-'click [data-action=logout]' : function() {
-  AccountsTemplates.logout();
-  console.log("LOGGING OUT");
-},
 })

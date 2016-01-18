@@ -1,9 +1,11 @@
 SearchController = AppController.extend({
   waitOn: function() {
     return this.subscribe('actodes');
+    //this.subscribe('relationships', Meteor.user().relatedActode);
   },
   data: {
-    actodes: Actodes.find({})
+    //actodes: Actodes.find({})
+
   },
   onAfterAction: function () {
     Meta.setTitle('Buscar');

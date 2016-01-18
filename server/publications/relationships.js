@@ -1,7 +1,7 @@
 Meteor.publish("relationships",
-  function(owner){
+  function(origin){
     if (this.userId) {
-      return Relationships.find({owner: owner});
+      return Relationships.find({origin: origin});
     } else {
       this.ready();
     }

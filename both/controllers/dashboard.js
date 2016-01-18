@@ -1,18 +1,22 @@
 DashboardController = AppController.extend({
   waitOn: function() {
-    return this.subscribe('items');
-  },
-  data: {
-    items: Actodes.find({})
+    return [
+      Meteor.subscribe('relationships', Meteor.user().belongsTo),
+      Meteor.subscribe("actodes")
+    ]
   },
   onAfterAction: function () {
-    Meta.setTitle('Dashboard');
-  }
+    Meta.setTitle('Panel');
+  },
+  fastRender: true
 });
 
 DashboardController.events({
-  'click [data-action=doSomething]': function (event, template) {
-    event.preventDefault();
+  'click [data-action=goTo]': function (e) {
+    //console.log(e.target.name);
+    goToStr = '/' + e.target.name;
+    Router.go(goToStr);
+
 
   }
 });

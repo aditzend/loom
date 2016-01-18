@@ -6,6 +6,15 @@ Actodes.allow({
     return userId;
   },
   'remove': function(userId, doc) {
-    return userId;
+    console.log('ORIGIN : ' + doc.origin);
+
+    if (doc.author === userId) {
+      return userId;
+      console.log("OWN ACTODE: DELETE AUTHORIZED");
+
+    }else{
+      console.log("ACTODE NOT OWNED. DELETE DENIED.");
+
+    }
   }
 });

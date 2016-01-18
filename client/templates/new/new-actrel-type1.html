@@ -1,0 +1,71 @@
+<template name="new-actrel-type1">
+  <h3>datos de la persona</h3>
+  <hr>
+  <h5>
+    informacion abierta a la red
+  </h5>
+  {{> actodeSearcher}}
+  <form role="form" data-action="insertActodeAndRelationship">
+    <div class="input-group">
+      <span class="input-group-addon">nombre</span>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">apellido</span>
+      <input type="text" class="form-control" id="lastName">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">cumplea&ntilde;os</span>
+      <input type="date" class="form-control" id="bdate">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"># de documento</span>
+      <input type="text" class="form-control" id="cid" placeholder="Sin puntos ni espacios" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">tipo</span>
+      <input type="text" class="form-control" id="cidType" placeholder="Sin puntos ni espacios" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group">
+      <input class="form-control" type="radio"   id="gender" name="gender"  value="M" checked> Hombre
+      <br>
+      <input class="form-control" type="radio"   id="gender" name="gender" value="F" checked> Mujer
+    </div>
+    <hr>
+    <br>
+    <h5>
+      informacion solo para tu empresa
+    </h5>
+    <br>
+
+
+
+    <p>
+      que relacion tiene con uds?
+    </p>
+    <select  name="relType">
+  <option value="1">cliente</option>
+  <option value="2">proveedor</option>
+  <option value="3">empleado</option>
+  <option value="4">contador</option>
+</select>
+
+    <br>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">email</span>  <input type="email" class="form-control" id="email">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">celular</span>  <input type="tel" class="form-control" id="mobile">
+    </div>
+      <hr>
+    <br>
+    <button type="submit" class="btn btn-default">crear</button>
+  </form>
+</template>

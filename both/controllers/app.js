@@ -1,5 +1,7 @@
 AppController = RouteController.extend({
-  layoutTemplate: 'appLayout'
+  layoutTemplate: 'appLayout',
+  fastRender: true
+
 });
 
 AppController.events({

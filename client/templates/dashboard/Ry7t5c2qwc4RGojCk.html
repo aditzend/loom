@@ -1,0 +1,71 @@
+<template name="dashboard-Ry7t5c2qwc4RGojCk">
+<!-- THOMAS DITZEND -->
+  <h1>panel de control</h1>
+  <br>
+<p>
+  Hola {{relatedActodeName}}
+
+</p>
+<br>
+
+<h6>Actualmente perteneces a : {{belongsTo}}</h6>
+
+<br>
+
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+  <div class="btn-group" role="group">
+    <button  type="button" data-action='goTo' name='new-actrel' class="btn btn-default">nueva persona, grupo o empresa</button>
+  </div>
+
+
+</div>
+
+<table class="table table-striped">
+       <thead>
+           <tr>
+
+               <th>nombre</th>
+               <th>apellido</th>
+               <th>email</th>
+           </tr>
+       </thead>
+       <tbody>
+         {{#each relationships 1}}
+           <tr>
+
+               <td><a href="/profiles/wkdB3C9iJZeXKADvA">{{actodeName destiny}}</a></td>
+               <td>  {{actodeLastName  destiny}}</td>
+               <td> {{email}}</td>
+           </tr>
+           {{/each}}
+       </tbody>
+   </table>
+
+
+
+<hr>
+<h4>Clientes</h4>
+{{#each relationships 1}}
+<div >
+  {{actodeName destiny}}
+  {{actodeLastName  destiny}}
+ {{email}}
+
+</div>
+{{/each}}
+<hr>
+<h4>Empleados</h4>
+{{#each relationships 3}}
+<div >
+  {{actodeName destiny}}
+  {{actodeLastName destiny}}
+ {{email}}
+ {{name}}
+</div>
+{{/each}}
+
+
+
+
+</template>

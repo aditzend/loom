@@ -6,16 +6,19 @@
 </p>
 <br>
 
-<h6>Actualmente perteneces a :</h6>
+<h6>Actualmente perteneces
+  a : {{belongsTo}}</h6>
 
 
 
 
 <hr>
-<div id="name">
-  {{belongsTo}}
+{{#each relationships}}
+<div >
+ {{cid}}
+ {{cidType}}
 </div>
-
+{{/each}}
 
 
 

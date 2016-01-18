@@ -31,7 +31,7 @@ AccountsTemplates.configure({
    termsUrl: 'terms-of-use',
 
    // Redirects
-   homeRoutePath: '/search',
+   homeRoutePath: '/',
    redirectTimeout: 4000,
 
    // Hooks
@@ -77,6 +77,7 @@ AccountsTemplates.configure({
   var mySubmitFunc = function(error, state){
     if (!error) {
       if (state === "signIn") {
+
         //console.log("LOGGED IN");
         //console.log('relatedActode stored in Session > ' + Meteor.user().relatedActode);
         //Session.set('relatedActode', Meteor.user().relatedActode);
