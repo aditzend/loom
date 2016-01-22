@@ -1,4 +1,4 @@
-Meteor.publishComposite("items", function() {
+/*Meteor.publishComposite("items", function() {
   return {
     find: function() {
       return Items.find({});
@@ -12,4 +12,4 @@ Meteor.publishComposite("items", function() {
     //   }
     // ]
   }
-});
+});*/

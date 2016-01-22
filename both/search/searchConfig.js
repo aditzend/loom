@@ -17,7 +17,7 @@ ActodesIndex = new EasySearch.Index({
   collection: Actodes,
   fields: ['name','lastName', 'cid'],
   defaultSearchOptions: {
-    limit: 8
+    limit: 3
   },
   permission: () => {
     //console.log(Meteor.userId());

@@ -2,9 +2,9 @@
   <h3>datos de la persona</h3>
   <hr>
   <h5>
-    informacion abierta a la red
+    informacion abierta
   </h5>
-  {{> actodeSearcher}}
+  {{> actodeSearcherDropdown}}
   <form role="form" data-action="insertActodeAndRelationship">
     <div class="input-group">
       <span class="input-group-addon">nombre</span>
@@ -23,18 +23,26 @@
     <br>
     <div class="input-group">
       <span class="input-group-addon"># de documento</span>
-      <input type="text" class="form-control" id="cid" placeholder="Sin puntos ni espacios" aria-describedby="sizing-addon1">
+      <input type="text" class="form-control" id="cid"
+      placeholder="Sin puntos ni espacios"
+      aria-describedby="sizing-addon1">
     </div>
     <br>
     <div class="input-group">
       <span class="input-group-addon">tipo</span>
-      <input type="text" class="form-control" id="cidType" placeholder="Sin puntos ni espacios" aria-describedby="sizing-addon1">
+      <input type="text" class="form-control" id="cidType"
+      placeholder="Sin puntos ni espacios"
+      aria-describedby="sizing-addon1">
     </div>
     <br>
     <div class="input-group">
-      <input class="form-control" type="radio"   id="gender" name="gender"  value="M" checked> Hombre
+      <input class="form-control" type="radio"
+        id="gender" name="gender"
+        value="M" checked> Hombre
       <br>
-      <input class="form-control" type="radio"   id="gender" name="gender" value="F" checked> Mujer
+      <input class="form-control" type="radio"
+       id="gender" name="gender" value="F"
+        checked> Mujer
     </div>
     <hr>
     <br>

@@ -1,32 +1,33 @@
-<template name="search">
-  <div class="template-home">
-{{#if userCan 'view'}}VIEW OK{{else}}VIEW DENIED{{/if}}
-    <div class="page-header appear-first">
-      <h1 >buscar <strong>cliente</strong> </h1>
-    </div>
-    {{> actodeSearcher}}
-  </div>
-</template>
 <!-- SEARCHBAR -->
 <template name="actodeSearcher">
   <div class="input-group input-group-lg appear-second" >
     {{#EasySearch.IfInputEmpty index=index }}
 
-    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search"></i></span>
+    <span class="input-group-addon" id="sizing-addon1">
+      <i class="fa fa-search"></i>
+    </span>
     {{else}}
       {{#if resultsCount}}
         {{#if oneFound}}
-        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-thumbs-up"></i></span>
+        <span class="input-group-addon" id="sizing-addon1">
+          <i class="fa fa-thumbs-up"></i>
+        </span>
         {{else}}
-        <span class="input-group-addon" id="sizing-addon1">{{resultsCount}} <i class="fa fa-user"></i></span>
+        <span class="input-group-addon" id="sizing-addon1">
+          {{resultsCount}} <i class="fa fa-user"></i>
+        </span>
         {{/if}}
       {{/if}}
     {{/EasySearch.IfInputEmpty}}
     {{#EasySearch.IfSearching index=index }}
-      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-cog spinning"></i></span>
+      <span class="input-group-addon" id="sizing-addon1">
+        <i class="fa fa-cog spinning"></i>
+      </span>
     {{/EasySearch.IfSearching }}
     {{#EasySearch.IfNoResults index=index}}
-      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-remove"></i></span>
+      <span class="input-group-addon" id="sizing-addon1">
+        <i class="fa fa-remove"></i>
+      </span>
     {{/EasySearch.IfNoResults}}
   {{> EasySearch.Input index=index attributes=inputAttributes }}
   </div>

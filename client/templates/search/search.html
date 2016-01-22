@@ -1,0 +1,9 @@
+<template name="search">
+  <div class="template-home">
+{{#if userCan 'view'}}VIEW OK{{else}}VIEW DENIED{{/if}}
+    <div class="page-header appear-first">
+      <h1 >buscar <strong>cliente</strong> </h1>
+    </div>
+    {{> actodeSearcher}}
+  </div>
+</template>

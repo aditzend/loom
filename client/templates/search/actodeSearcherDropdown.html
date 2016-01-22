@@ -1,0 +1,52 @@
+<!-- SEARCH DROPDOWN -->
+<template name="actodeSearcherDropdown">
+
+
+<div class="input-group input-group-lg appear-second" >
+  {{#EasySearch.IfInputEmpty index=ActodesIndex }}
+
+  <span class="input-group-addon" id="sizing-addon1">
+    <i class="fa fa-search"></i>
+  </span>
+  {{else}}
+    {{#if resultsCount}}
+      {{#if oneFound}}
+      <span class="input-group-addon" id="sizing-addon1">
+        <i class="fa fa-thumbs-up"></i>
+      </span>
+      {{else}}
+      <span class="input-group-addon" id="sizing-addon1">
+        {{resultsCount}} <i class="fa fa-user"></i>
+      </span>
+      {{/if}}
+    {{/if}}
+  {{/EasySearch.IfInputEmpty}}
+  {{#EasySearch.IfSearching index=ActodesIndex }}
+    <span class="input-group-addon" id="sizing-addon1">
+      <i class="fa fa-cog spinning"></i>
+    </span>
+  {{/EasySearch.IfSearching }}
+  {{#EasySearch.IfNoResults index=ActodesIndex}}
+    <span class="input-group-addon" id="sizing-addon1">
+      <i class="fa fa-remove"></i>
+    </span>
+  {{/EasySearch.IfNoResults}}
+
+    {{> EasySearch.Input index=ActodesIndex attributes=inputAttributes }}
+
+
+
+</div>
+<ul class="list-group appear-third">
+  {{#EasySearch.Each index=ActodesIndex }}
+    {{#if oneFound}}
+      {{> actode}}
+    {{else}}
+      {{> actodeListItem}}
+    {{/if}}
+  {{/EasySearch.Each}}
+</ul>
+{{#EasySearch.IfNoResults index=ActodesIndex }}
+  <div class="padded no-results"> <h4>perfil nuevo!w</h4></div>
+{{/EasySearch.IfNoResults }}
+</template>

@@ -1,0 +1,33 @@
+<template name="list">
+    <div class="container">
+        <h1>Autoform Input Place List</h1>
+
+        <h2> insert Form </h2>
+        {{> quickForm id="formInsert" schema="Schema.Test" collection="Test" type="insert" }}
+
+
+        <h2> List </h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Address 1 </th>
+                    <th> Address 2 </th>
+                    <th> Text </th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each addresses}}
+                    <tr>
+                        <td> {{_id}}</td>
+                        <td> {{#if address1}}{{address1.geopoint}}{{/if}} </td>
+                        <td> {{#if address2}}{{address2.formattedAddress}}{{/if}} </td>
+                        <td> {{#if text}}{{text}}{{/if}} </td>
+                        <td> <a href="address/{{_id}}">Edit</a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

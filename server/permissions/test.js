@@ -1,4 +1,4 @@
-/*Items.allow({
+Test.allow({
   'insert': function(userId, doc) {
     return userId;
   },
@@ -8,4 +8,4 @@
   'remove': function(userId, doc) {
     return userId;
   }
-});*/
+});

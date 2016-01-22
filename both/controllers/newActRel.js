@@ -14,7 +14,17 @@ NewActRelController.events({
     console.log(e.target.id);
     this.render(e.target.id , {to: 'actodeForm'});
   },
+  'keypress [data-action=test-enter]' : function(e) {
+    if (e.keyCode == 13) {
+      //console.log(e.keyCode);
+      getName(e.target.value);
+      document.getElementById('name').value=getName(e.target.value);
+      document.getElementById('lastName').value=getLastName(e.target.value);
+      //console.log(e.target.value);
+    }
 
+
+  },
   'submit [data-action=insertActodeAndRelationship]' : function(e) {
     e.preventDefault();
     // create the global id of the Actode
