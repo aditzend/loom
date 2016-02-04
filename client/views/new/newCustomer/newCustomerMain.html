@@ -1,0 +1,19 @@
+<template name="newCustomerMain">
+{{#momentum plugin="fade"}}
+  <h1>NUEVO CLIENTE </h1>
+
+  <div id="companySection">
+{{> Template.dynamic template=showCompletedTemplate}}
+  {{> Template.dynamic template=stepActiveTemplate}}
+<!--{{> Template.dynamic template="displayCompany"}}  -->
+  </div>
+  {{> yield "company"}}
+
+
+  {{> yield "place"}}
+  {{> yield "contact"}}
+
+
+  <button id="nextStepNewPlace" class="btn btn-primary">SIGUIENTE</button>
+  {{/momentum}}
+</template>

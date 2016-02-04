@@ -1,4 +1,10 @@
-
+Template.registerHelper("placeTypeOptions", function(){
+  return [
+    {label:'la oficina principal', value: 1},
+    {label:'el deposito reciben mercaderia', value: 2},
+    {label:'donde se retiran pagos', value: 3},
+  ];
+});
 Template.registerHelper("relationships", function(type){
   type = type.toString();
   return Relationships.find({type:  type});
@@ -13,7 +19,7 @@ Template.registerHelper("actodeLastName", function(destiny){
 });
 
 Template.registerHelper("relatedActodeName", function(){
-  ra = Meteor.user().relatedActode;
+  /*ra = Meteor.user().relatedActode;
   //Session.get('relatedActode')
   return Actodes.find( {_id: ra })
     .map (
@@ -21,8 +27,9 @@ Template.registerHelper("relatedActodeName", function(){
         return actode.name;
       }
     );
-  }
-);
+  }*/
+  return 'DM';
+});
 
 Template.registerHelper("hasCustomizedDashboard", function(){
   return Meteor.user().hasCustomizedDashboard;
@@ -133,4 +140,19 @@ Template.registerHelper("userCan", function(generalAction){
 
 
 
+});
+Template.registerHelper("countryOptions", function(){
+    return [
+      {label:'Argentina', value: '54'},
+      {label:'Brasil', value: '55'}
+    ];
+
+});
+
+Template.registerHelper("showCompletedTemplate", function(){
+  return Session.get('SHOW_COMPLETED_TPL');
+
+});
+Template.registerHelper("currCompany", function(){
+  return Session.get('CURR_COMPANY_ID');
 });

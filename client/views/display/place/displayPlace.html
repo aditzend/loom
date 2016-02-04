@@ -1,0 +1,10 @@
+<template name="displayPlace">
+  <h5>lugar recien creado</h5>
+  <p>
+    {{#each place}}
+    <h6>{{address.formattedAddress}}</h6>
+    {{placeType}}
+    {{/each}}
+
+  </p>
+</template>

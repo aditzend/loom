@@ -1,6 +1,6 @@
-<template name="dashboard-Ry7t5c2qwc4RGojCk">
-<!-- THOMAS DITZEND -->
-  <h1>panel de control</h1>
+<template name="generalDashboard">
+<!-- for users where hasCustomizedDashboard === false -->
+  <h1>PANEL DE CONTROL {{belongsToId}}</h1>
   <br>
 <p>
   Hola {{relatedActodeName}}
@@ -8,26 +8,23 @@
 </p>
 <br>
 
-<h6>Actualmente perteneces a : {{belongsTo}}</h6>
-
 <br>
 
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
   <div class="btn-group" role="group">
-    <button  type="button" data-action='goTo' name='new-actrel' class="btn btn-default">nueva persona, grupo o empresa</button>
+    <button  type="button" data-action='goTo' name='new-actrel' class="btn btn-primary">CREAR PERFIL</button>
   </div>
 
 
 </div>
-
+<hr>
 <table class="table table-striped">
        <thead>
            <tr>
-
-               <th>nombre</th>
-               <th>apellido</th>
-               <th>email</th>
+               <th>NOMBRE</th>
+               <th>APELLIDO</th>
+               <th>EMAIL</th>
            </tr>
        </thead>
        <tbody>

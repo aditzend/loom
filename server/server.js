@@ -33,10 +33,10 @@ settings = {
   }
 };
 
-console.log(settings);
+//console.log(settings);
 
 if (!process.env.METEOR_SETTINGS) {
-  console.log("No METEOR_SETTINGS passed in, using locally defined settings.");
+  //console.log("No METEOR_SETTINGS passed in, using locally defined settings.");
   if (environment === "production") {
     Meteor.settings = settings.production;
   } else if (environment === "staging") {
@@ -44,6 +44,6 @@ if (!process.env.METEOR_SETTINGS) {
   } else {
     Meteor.settings = settings.development;
   }
-  console.log(" [ " + environment + " ] Meteor.settings");
-  console.log("[Object] Settings meteor" , Meteor.settings);
+  //console.log(" [ " + environment + " ] Meteor.settings");
+  //console.log("[Object] Settings meteor" , Meteor.settings);
 }

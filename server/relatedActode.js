@@ -1,1 +1,1 @@
-Meteor.users.update('Ry7t5c2qwc4RGojCk', { $set: {relatedActode: 'doxCSwkKebX7Nd6pN'} } );
+Meteor.users.update("TuNiWMvWwQ649yBKn", { $set: {relatedActode: "MWXuj8kFyo68TkSsD", hasRelatedActode: true} } );

@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}">la red</a>
+        <a class="logo" href="{{pathFor 'home'}}"><img src="../images/logoDm130.png" /></a>
 
       </div>
 
@@ -31,14 +31,14 @@
           </ul>
         {{else}}
           <div class="navbar-right">
-            <a href="{{ pathFor 'atSignIn' }}" class="btn btn-default navbar-btn">Entrar</a>
-            <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">Registrarse</a>
+            <a href="{{ pathFor 'atSignIn' }}" class="btn btn-primary navbar-btn">INGRESAR</a>
+
           </div>
         {{/if}}
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="{{ isActiveRoute regex='search' }}"><a href="{{ pathFor 'search' }}"><i class="fa fa-search"></i> Buscar </a></li>
-          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}"><i class="fa fa-dashboard"></i> Panel </a></li>
+          <li class="{{ isActiveRoute regex='search' }}"><a href="{{ pathFor 'search' }}"><i class="fa fa-search"></i> BUSCAR </a></li>
+          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}"><i class="fa fa-dashboard"></i> PANEL </a></li>
         </ul>
       </div>
 

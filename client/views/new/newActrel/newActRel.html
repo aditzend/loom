@@ -1,0 +1,30 @@
+<template name="newActRel">
+  <h1>CREAR PERFIL</h1>
+
+
+  <br>
+
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+    <div class="btn-group" role="group">
+      <button id="newPerson" type="button" data-action="renderSubTemplate" class="btn btn-default">persona</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button id="newCompany" type="button" data-action="renderSubTemplate" class="btn btn-default">empresa</button>
+    </div>
+
+
+  </div>
+
+
+
+<br>
+<div >
+  {{> yield "actodeForm"}}
+  {{> newPlace}}
+</div>
+
+
+
+
+</template>

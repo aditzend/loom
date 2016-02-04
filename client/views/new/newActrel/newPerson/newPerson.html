@@ -1,10 +1,46 @@
-<template name="new-actrel-type1">
-  <h3>datos de la persona</h3>
-  <hr>
-  <h5>
-    informacion abierta
+<template name="newPerson">
+  <div class="panel panel-default appear-first">
+    <div class="panel-heading">NUEVA PERSONA</div>
+
+    <div class="panel-body">
+      {{#autoForm collection="Actodes" id="insertPerson" type="insert"}}
+      <fieldset>
+        {{> afQuickField name="dnix"}}
+        {{> afQuickField name="lenr"}}
+        {{> afQuickField name="cuil"}}
+        {{> afQuickField name="country" options=countryOptions value='0540'}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="middleName"}}
+        {{> afQuickField name="lastName"}}
+        {{> afQuickField name="treatedAs"}}
+        {{> afQuickField name="formalTreatment" value=true}}
+        {{> afQuickField name="email" }}
+        {{> afQuickField name="mobile" }}
+        <h1>{{isValidPhone}}</h1>
+
+        <!--{{> afQuickField name="actodeCidType" options= idTypeOptions noselect=true}}
+        {{#if afFieldValueIs name="actodeCidType" value="DNIX"}}
+
+          <div class="appear-first">{{> afQuickField id='dnix' name="dnix"}}</div>
+          <h5>{{getDNI}}</h5>
+        {{/if}}
+        {{#if afFieldValueIs name="actodeCidType" value="LENR"}}
+
+          <div class="appear-first">{{> afQuickField name="lenr"}}</div>
+        {{/if}}-->
+      </fieldset>
+      <button type="submit" class="btn btn-primary">CREAR</button>
+      {{/autoForm}}
+    </div>
+  </div>
+
+  <!--
+{{> quickForm collection="Actodes" id="insertActodePersonForm" type="insert"}}-->
+
+  <!--<h5>
+    ZONA ABIERTA
   </h5>
-  {{> actodeSearcherDropdown}}
+
   <form role="form" data-action="insertActodeAndRelationship">
     <div class="input-group">
       <span class="input-group-addon">nombre</span>
@@ -75,5 +111,5 @@
       <hr>
     <br>
     <button type="submit" class="btn btn-default">crear</button>
-  </form>
+  </form>-->
 </template>

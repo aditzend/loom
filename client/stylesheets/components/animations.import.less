@@ -1,0 +1,131 @@
+@import '../base/mixins.import.less';
+@import '../base/variables.import.less';
+
+.spinning {
+    animation: spin 9s infinite linear;
+    -webkit-animation: spin2 9s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+.breathing {
+    animation: breathe 3s ease-in-out 0s infinite alternate;
+    -webkit-animation: breathe 3s ease-in-out 0s infinite alternate;
+}
+
+@keyframes breathe {
+    from { transform: scale(0.995) rotate(0deg); }
+    to { transform: scale(1.005) rotate(0deg); }
+}
+
+@-webkit-keyframes breathe2 {
+    from { -webkit-transform: scale(1.1); }
+    to { -webkit-transform: scale(0.9); }
+}
+
+@keyframes appear {
+    0% { opacity: 0; }
+    100% {opacity: 1;}
+}
+
+
+@keyframes disappear {
+  0% { opacity: 0;  }
+  15% { opacity: 1;}
+  85% { opacity: 0.9;}
+  100% {opacity: 0; }
+}
+
+@keyframes flash {
+  0% { opacity: 0;}
+  10% { opacity: 1;}
+  80% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+
+.flash-1{
+  animation-name: flash;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.flash-2{
+  animation-name: flash;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 100ms;
+}
+.flash-3{
+  animation-name: flash;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 200ms;
+}
+
+.disappear-up {
+  animation-name: disappear;
+  animation-duration: 1200ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  //animation-fill-mode: both;
+
+}
+
+.appear-first {
+   animation-name: appear;
+   animation-duration: 600ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+}
+.appear-second {
+   animation-name: appear;
+   animation-duration: 500ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 100ms;
+   animation-fill-mode: both;
+}
+
+.appear-third {
+   animation-name: appear;
+   animation-duration: 500ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 200ms;
+   animation-fill-mode: both;
+}
+.appear-fourth {
+   animation-name: appear;
+   animation-duration: 500ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 300ms;
+   animation-fill-mode: both;
+}
+.appear-fifth {
+   animation-name: appear;
+   animation-duration: 500ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 400ms;
+   animation-fill-mode: both;
+}
+.appear-sixth {
+   animation-name: appear;
+   animation-duration: 500ms;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 500ms;
+   animation-fill-mode: both;
+}

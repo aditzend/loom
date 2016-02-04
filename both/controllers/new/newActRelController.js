@@ -1,9 +1,12 @@
+console.log("[COMMON] Loading newActRelController.js ...");
 NewActRelController = AppController.extend({
 
 
   onAfterAction: function() {
     Meta.setTitle('Crear Perfil'),
-    this.render('new-actrel-type1' , {to: 'actodeForm'});
+    
+
+    this.render('newPerson' , {to: 'actodeForm'});
   },
   layoutTemplate: 'appLayout',
 
@@ -12,6 +15,13 @@ NewActRelController = AppController.extend({
 NewActRelController.events({
   'click [data-action=renderSubTemplate]' : function(e) {
     console.log(e.target.id);
+    //Session.set('selectedTemplate', e.target.id);
+    //if (e.target.id == 'newPerson') {
+    //  Actodes.attachSchema(Schema.Person, {replace:true});
+      //console.log("changing schema to Person");
+
+  //  }
+
     this.render(e.target.id , {to: 'actodeForm'});
   },
   'keypress [data-action=test-enter]' : function(e) {

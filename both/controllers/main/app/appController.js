@@ -1,3 +1,5 @@
+console.log("[COMMON] Loading appController.js ...");
+
 AppController = RouteController.extend({
   layoutTemplate: 'appLayout',
   fastRender: true
